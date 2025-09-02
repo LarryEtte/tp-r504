@@ -1,4 +1,7 @@
-a = float(input("Choisissez un nombre: "))
-b = float(input("Choisissez son exposant: "))
-res = a ** b
-print(f"Le résultat de {a} à l'exposant {b} est {res}")
+def puissance(a,b):
+    if (not type(a) is int) or (not type(b) is int):
+        raise TypeError("Integers only")
+        exit()
+    res = a ** b
+    print(f"Le résultat de {a} à l'exposant {b} est {res}")
+    return res
