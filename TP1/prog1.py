@@ -2,8 +2,8 @@ import fonctions as f
 
 print("Hello, World!")
 
-a=input("Choisissez un nombre: ")
-b=input("Choisissez un exposant: ")
+a=int(input("Choisissez un nombre: "))
+b=int(input("Choisissez un exposant: "))
 
 res = f.puissance(a,b)
 
