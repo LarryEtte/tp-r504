@@ -17,4 +17,4 @@ def test_3():
 
 def test_4():
     with pytest.raises(ValueError, match="Undefined exposant"):
-    
+    	f.puissance(0,-13)
