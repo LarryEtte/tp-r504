@@ -10,6 +10,6 @@ RUN python3 -m pip config set global.break-system-packages true
 RUN pip3 install --upgrade pip
 RUN pip3 install flask-mysqldb mysql-connector-python
 RUN mkdir -p /srv/templates
-COPY index.html /srv
+COPY index.html /srv/templates
 COPY app_1.py /srv
-CMD ["flask", "--app", "app_1", "run", "--host=0.0.0.0"]
+CMD ["flask", "--app", "/srv/app_1", "run", "--host=0.0.0.0"]
