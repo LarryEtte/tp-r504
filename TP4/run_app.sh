@@ -1,7 +1,8 @@
 #!/bin/bash
-docker run --rm  \
+docker run -d --rm  \
   -p 5000:5000  \
-  --mount type=bind,src=/TP4/srv,dst=/srv  \
-  --name tp4-app  \
+  -v $(pwd)/srv:/srv  \
+  --name tp4-app-2  \
   --network net-tp4  \
   im-tp4-2  \
+  1>/dev/null 2>/dev/null
