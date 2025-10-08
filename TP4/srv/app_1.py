@@ -11,23 +11,24 @@ db_config = {
     'database': 'demosql'
 }
 
-# Initialize MySQL connection
-conn = mysql.connector.connect(**db_config)
-cursor = conn.cursor() 
-
-
 @app.route('/')
 def index():
+    # Initialize MySQL connection
+    conn = mysql.connector.connect(**db_config)
+    cursor = conn.cursor() 
+
     # Sample query
     query = "SELECT * FROM myTable"
     cursor.execute(query)
     data = cursor.fetchall()
-        
+
     return render_template('index.html', data=data)
 
     # Close the cursor and connection
-    cursor.close()
-    conn.close()
+    #cursor.close()
+    #conn.close()
+        
+
 
 if __name__ == '__main__':
     app.run(debug=True)
